@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kamalraj-react-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+        - name: react-app
+          image: 07kamal03/temp-react-container:tagname
+          ports:
+            - containerPort: 80
